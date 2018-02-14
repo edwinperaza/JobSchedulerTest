@@ -74,7 +74,11 @@ public class MainActivity extends Activity {
 
     private ComponentName mServiceComponent;
 
-    private int mJobId = 0;
+    public int mJobId = 0;
+
+    public int getmJobId() {
+        return mJobId;
+    }
 
     // Handler for incoming messages from the service.
     private IncomingMessageHandler mHandler;
@@ -149,7 +153,8 @@ public class MainActivity extends Activity {
         }
         extras.putLong(WORK_DURATION_KEY, Long.valueOf(workDuration) * 1000);
 
-        builder.setExtras(extras);
+//        builder.setPeriodic(1000);
+//        builder.setExtras(extras);
 
         // Schedule job
         Log.d(TAG, "Scheduling job");
